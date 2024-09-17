@@ -1,0 +1,1 @@
+INSERT INTO Trainees (Name) VALUES ('Jef');
