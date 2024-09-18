@@ -14,12 +14,19 @@ public class Trainee
     public ICollection<CourseProgress> CourseProgresses { get; set;  }= new List<CourseProgress>();
     public ICollection<CourseEnrollmentTrainee> CourseEnrollmentTrainees { get; set; } = new List<CourseEnrollmentTrainee>();
 
-    public void Append(Event @event)
+    public Trainee(string name, string email)
     {
-        Events.Add(@event);
+        Name = name;
+        Email = email;
+        Events =
+        [
+            new TraineeCreated { NameTrainee = name }
+        ];
     }
-    public void Apply(TraineeUpdated traineeUpdated)
+  
+    public void UpdateName (String name)
     {
-        Name = traineeUpdated.Name;
+        Events.Add(new TraineeUpdated{TraineeId = TraineeId, Name = name});
+        Name = name;
     }
 }

@@ -26,20 +26,9 @@ public class TraineeController : ControllerBase
     }
 
     [HttpPost("trainees/{traineeName}")]
-    public async Task<ActionResult> AddTrainee(string traineeName, string authorizer)
+    public async Task<ActionResult> AddTrainee(string traineeName, string email)
     {
-        var trainee = new Trainee
-        {
-            Name = traineeName,
-            Events = []
-        };
-
-        trainee.Append(new TraineeCreated
-        {
-            NameTrainee = traineeName,
-            NameAuthorizer = authorizer
-        });
-
+        var trainee = new Trainee(traineeName,email);
         var addedTrainee = await _traineeManager.AddTrainee(trainee);
         return Ok(addedTrainee);
     }
@@ -49,13 +38,7 @@ public class TraineeController : ControllerBase
     {
         var trainee = await _traineeManager.GetTrainee(traineeId);
         if (trainee == null) return NotFound();
-        var traineeEvent = new TraineeUpdated
-        {
-            TraineeId = traineeId,
-            Name = name,
-        };
-        trainee.Append(traineeEvent);
-        trainee.Apply(traineeEvent);
+        trainee.UpdateName(name);
         await _traineeManager.Update();
         return Ok(trainee);
     }
