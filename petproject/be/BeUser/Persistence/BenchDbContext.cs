@@ -23,6 +23,8 @@ public class BenchDbContext : DbContext
     {
         optionsBuilder.UseSqlServer(
             "data source=DESKTOP-97TDGHQ\\SQLEXPRESS;initial catalog=Bench;Trusted_Connection=True;TrustServerCertificate=True;");
+        /*optionsBuilder.UseSqlServer(
+            "data source=bm\\SQLEXPRESS;initial catalog=Bench;Trusted_Connection=True;TrustServerCertificate=True;");*/
     }
 
     public DbSet<Course> Courses { get; set; }
