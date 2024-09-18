@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.User;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -13,7 +14,7 @@ public class TraineeManager : ITraineeManager
         _context = context;
     }
 
-    public async Task<Trainee?> GetTrainee(int traineeId)
+    public async Task<Trainee?> GetTrainee(Guid traineeId)
     {
         return await _context.Trainees.Include(t => t.Events).FirstOrDefaultAsync(t => t.TraineeId == traineeId);
     }

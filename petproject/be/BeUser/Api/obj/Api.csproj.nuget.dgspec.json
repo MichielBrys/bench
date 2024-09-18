@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Api\\Api.csproj": {}
+    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Api\\Api.csproj": {
+    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Api\\Api.csproj",
+        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\brysmic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Api\\obj\\",
+        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brysmic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Service\\Service.csproj"
+              "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Service\\Service.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {
+    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\brysmic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brysmic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -143,14 +143,14 @@
         }
       }
     },
-    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj",
+        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\brysmic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Persistence\\obj\\",
+        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brysmic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -168,8 +168,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\Domain.csproj"
+              "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj"
               }
             }
           }
@@ -220,14 +220,14 @@
         }
       }
     },
-    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Service\\Service.csproj": {
+    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Service\\Service.csproj",
+        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\brysmic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Service\\obj\\",
+        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brysmic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -245,8 +245,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj"
+              "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Persistence\\Persistence.csproj"
               }
             }
           }

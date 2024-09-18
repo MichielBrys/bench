@@ -1,5 +1,7 @@
 ﻿using Domain;
 using Domain.Events;
+using Domain.Events.Trainee;
+using Domain.User;
 using Microsoft.AspNetCore.Mvc;
 using Service.Managers;
 
@@ -16,15 +18,15 @@ public class TraineeController : ControllerBase
         _traineeManager = traineeManager;
     }
 
-    [HttpGet("trainees/{traineeId:int}")]
-    public async Task<ActionResult> GetTraineeById(int traineeId)
+    [HttpGet("trainees/{traineeId:Guid}")]
+    public async Task<ActionResult> GetTraineeById(Guid traineeId)
     {
         var trainee = await _traineeManager.GetTrainee(traineeId);
         return trainee != null ? Ok(trainee) : BadRequest();
     }
 
     [HttpPost("trainees/{traineeName}")]
-    public async Task<ActionResult> AddTrainee(string traineeName)
+    public async Task<ActionResult> AddTrainee(string traineeName, string authorizer)
     {
         var trainee = new Trainee
         {
@@ -35,15 +37,15 @@ public class TraineeController : ControllerBase
         trainee.Append(new TraineeCreated
         {
             NameTrainee = traineeName,
-            NameAuthorizer = "Jeffery"
+            NameAuthorizer = authorizer
         });
 
         var addedTrainee = await _traineeManager.AddTrainee(trainee);
         return Ok(addedTrainee);
     }
 
-    [HttpPut("update-trainee/{traineeId:int}")]
-    public async Task<ActionResult> UpdateTrainee(int traineeId, string name)
+    [HttpPut("update-trainee/{traineeId:Guid}")]
+    public async Task<ActionResult> UpdateTrainee(Guid traineeId, string name)
     {
         var trainee = await _traineeManager.GetTrainee(traineeId);
         if (trainee == null) return NotFound();

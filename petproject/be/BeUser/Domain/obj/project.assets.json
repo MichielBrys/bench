@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\brysmic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\petproject\\be\\BeUser\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\brysmic\\AppData\\Roaming\\NuGet\\NuGet.Config",

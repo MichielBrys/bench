@@ -22,56 +22,440 @@ namespace Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Domain.Course.Chapter", b =>
+                {
+                    b.Property<Guid>("ChapterId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaterialUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ChapterId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("Chapters");
+                });
+
+            modelBuilder.Entity("Domain.Course.Course", b =>
+                {
+                    b.Property<Guid>("CourseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CourseId");
+
+                    b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.ChapterEnrollment", b =>
+                {
+                    b.Property<Guid>("ChapterEnrollmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ChapterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseEnrollmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ChapterEnrollmentId");
+
+                    b.HasIndex("ChapterId");
+
+                    b.HasIndex("CourseEnrollmentId");
+
+                    b.ToTable("ChapterEnrollments");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.CourseEnrollment", b =>
+                {
+                    b.Property<Guid>("CourseEnrollmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CourseState")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CourseEnrollmentId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("CourseEnrollments");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.CourseEnrollmentTrainee", b =>
+                {
+                    b.Property<Guid>("CourseEnrollmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TraineeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("CourseEnrollmentId", "TraineeId");
+
+                    b.HasIndex("TraineeId");
+
+                    b.ToTable("CourseEnrollmentTrainees");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.CourseEnrollmentTrainer", b =>
+                {
+                    b.Property<Guid>("CourseEnrollmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TrainerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("CourseEnrollmentId", "TrainerId");
+
+                    b.HasIndex("TrainerId");
+
+                    b.ToTable("CourseEnrollmentTrainers");
+                });
+
             modelBuilder.Entity("Domain.Events.Event", b =>
                 {
                     b.Property<Guid>("StreamId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
+                    b.Property<Guid?>("TraineeId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("TraineeId")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StreamId");
 
                     b.HasIndex("TraineeId");
 
-                    b.ToTable("Events", (string)null);
+                    b.ToTable("Event");
                 });
 
-            modelBuilder.Entity("Domain.Trainee", b =>
+            modelBuilder.Entity("Domain.Progress.ChapterProgress", b =>
                 {
-                    b.Property<int>("TraineeId")
+                    b.Property<Guid>("ChapterProgressId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TraineeId"));
+                    b.Property<Guid>("ChapterEnrollmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseProgressId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float>("PercentageDone")
+                        .HasColumnType("real");
+
+                    b.HasKey("ChapterProgressId");
+
+                    b.HasIndex("ChapterEnrollmentId");
+
+                    b.HasIndex("CourseProgressId");
+
+                    b.ToTable("ChapterProgresses");
+                });
+
+            modelBuilder.Entity("Domain.Progress.CourseProgress", b =>
+                {
+                    b.Property<Guid>("CourseProgressId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseEnrollmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float>("PercentageDone")
+                        .HasColumnType("real");
+
+                    b.Property<Guid>("TraineeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("CourseProgressId");
+
+                    b.HasIndex("CourseEnrollmentId");
+
+                    b.HasIndex("TraineeId");
+
+                    b.ToTable("CourseProgresses");
+                });
+
+            modelBuilder.Entity("Domain.Progress.ProgressReport", b =>
+                {
+                    b.Property<Guid>("ProgressReportId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("CourseProgressId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("PublishDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ProgressReportId");
+
+                    b.HasIndex("CourseProgressId");
+
+                    b.ToTable("ProgressReports");
+                });
+
+            modelBuilder.Entity("Domain.User.Trainee", b =>
+                {
+                    b.Property<Guid>("TraineeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TraineeId");
 
-                    b.ToTable("Trainees", (string)null);
+                    b.ToTable("Trainees");
+                });
+
+            modelBuilder.Entity("Domain.User.Trainer", b =>
+                {
+                    b.Property<Guid>("TrainerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TrainerId");
+
+                    b.ToTable("Trainers");
+                });
+
+            modelBuilder.Entity("Domain.Course.Chapter", b =>
+                {
+                    b.HasOne("Domain.Course.Course", "Course")
+                        .WithMany("Chapters")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.ChapterEnrollment", b =>
+                {
+                    b.HasOne("Domain.Course.Chapter", "Chapter")
+                        .WithMany("ChapterEnrollments")
+                        .HasForeignKey("ChapterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Course.Enrollments.CourseEnrollment", "CourseEnrollment")
+                        .WithMany("ChapterEnrollments")
+                        .HasForeignKey("CourseEnrollmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Chapter");
+
+                    b.Navigation("CourseEnrollment");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.CourseEnrollment", b =>
+                {
+                    b.HasOne("Domain.Course.Course", "Course")
+                        .WithMany("CourseEnrollments")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.CourseEnrollmentTrainee", b =>
+                {
+                    b.HasOne("Domain.Course.Enrollments.CourseEnrollment", "CourseEnrollment")
+                        .WithMany("CourseEnrollmentTrainees")
+                        .HasForeignKey("CourseEnrollmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User.Trainee", "Trainee")
+                        .WithMany("CourseEnrollmentTrainees")
+                        .HasForeignKey("TraineeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseEnrollment");
+
+                    b.Navigation("Trainee");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.CourseEnrollmentTrainer", b =>
+                {
+                    b.HasOne("Domain.Course.Enrollments.CourseEnrollment", "CourseEnrollment")
+                        .WithMany("CourseEnrollmentTrainers")
+                        .HasForeignKey("CourseEnrollmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User.Trainer", "Trainer")
+                        .WithMany("EnrollmentTrainers")
+                        .HasForeignKey("TrainerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseEnrollment");
+
+                    b.Navigation("Trainer");
                 });
 
             modelBuilder.Entity("Domain.Events.Event", b =>
                 {
-                    b.HasOne("Domain.Trainee", null)
+                    b.HasOne("Domain.User.Trainee", null)
                         .WithMany("Events")
-                        .HasForeignKey("TraineeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TraineeId");
                 });
 
-            modelBuilder.Entity("Domain.Trainee", b =>
+            modelBuilder.Entity("Domain.Progress.ChapterProgress", b =>
                 {
+                    b.HasOne("Domain.Course.Enrollments.ChapterEnrollment", "ChapterEnrollment")
+                        .WithMany("ChapterProgresses")
+                        .HasForeignKey("ChapterEnrollmentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Progress.CourseProgress", "CourseProgress")
+                        .WithMany("ChapterProgresses")
+                        .HasForeignKey("CourseProgressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChapterEnrollment");
+
+                    b.Navigation("CourseProgress");
+                });
+
+            modelBuilder.Entity("Domain.Progress.CourseProgress", b =>
+                {
+                    b.HasOne("Domain.Course.Enrollments.CourseEnrollment", "CourseEnrollment")
+                        .WithMany("CourseProgresses")
+                        .HasForeignKey("CourseEnrollmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User.Trainee", "Trainee")
+                        .WithMany("CourseProgresses")
+                        .HasForeignKey("TraineeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseEnrollment");
+
+                    b.Navigation("Trainee");
+                });
+
+            modelBuilder.Entity("Domain.Progress.ProgressReport", b =>
+                {
+                    b.HasOne("Domain.Progress.CourseProgress", "CourseProgress")
+                        .WithMany("ProgressReports")
+                        .HasForeignKey("CourseProgressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseProgress");
+                });
+
+            modelBuilder.Entity("Domain.Course.Chapter", b =>
+                {
+                    b.Navigation("ChapterEnrollments");
+                });
+
+            modelBuilder.Entity("Domain.Course.Course", b =>
+                {
+                    b.Navigation("Chapters");
+
+                    b.Navigation("CourseEnrollments");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.ChapterEnrollment", b =>
+                {
+                    b.Navigation("ChapterProgresses");
+                });
+
+            modelBuilder.Entity("Domain.Course.Enrollments.CourseEnrollment", b =>
+                {
+                    b.Navigation("ChapterEnrollments");
+
+                    b.Navigation("CourseEnrollmentTrainees");
+
+                    b.Navigation("CourseEnrollmentTrainers");
+
+                    b.Navigation("CourseProgresses");
+                });
+
+            modelBuilder.Entity("Domain.Progress.CourseProgress", b =>
+                {
+                    b.Navigation("ChapterProgresses");
+
+                    b.Navigation("ProgressReports");
+                });
+
+            modelBuilder.Entity("Domain.User.Trainee", b =>
+                {
+                    b.Navigation("CourseEnrollmentTrainees");
+
+                    b.Navigation("CourseProgresses");
+
                     b.Navigation("Events");
+                });
+
+            modelBuilder.Entity("Domain.User.Trainer", b =>
+                {
+                    b.Navigation("EnrollmentTrainers");
                 });
 #pragma warning restore 612, 618
         }

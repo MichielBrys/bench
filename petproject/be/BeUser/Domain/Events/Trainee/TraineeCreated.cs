@@ -1,9 +1,12 @@
-﻿namespace Domain.Events;
+﻿namespace Domain.Events.Trainee;
 
 public class TraineeCreated : Event
 {
     public required string NameTrainee;
     public required string NameAuthorizer;
-    public string Type = "Create";
+    
 
+    public TraineeCreated() : base("TraineeCreated")
+    {
+    }
 }

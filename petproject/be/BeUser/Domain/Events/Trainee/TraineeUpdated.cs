@@ -1,8 +1,11 @@
-﻿namespace Domain.Events;
+﻿namespace Domain.Events.Trainee;
 
 public class TraineeUpdated : Event
 {
-    public required int TraineeId;
+    public required Guid TraineeId;
     public required string Name;
-    public string Type = "Update";
+    public TraineeUpdated() : base("TraineeUpdated")
+    {
+    }
+    
 }
