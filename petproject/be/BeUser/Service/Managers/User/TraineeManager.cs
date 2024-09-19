@@ -1,9 +1,8 @@
-﻿using Domain;
-using Domain.User;
+﻿using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
-namespace Service.Managers;
+namespace Service.Managers.User;
 
 public class TraineeManager : ITraineeManager
 {

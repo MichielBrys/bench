@@ -1,4 +1,4 @@
-﻿namespace Domain.Course;
+﻿namespace Domain.Courses;
 
 public enum CourseState
 {

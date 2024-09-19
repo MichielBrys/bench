@@ -1,6 +1,6 @@
-﻿using Domain.User;
+﻿using Domain.Users;
 
-namespace Domain.Course.Enrollments;
+namespace Domain.Courses.Enrollments;
 
 public class CourseEnrollmentTrainer
 {

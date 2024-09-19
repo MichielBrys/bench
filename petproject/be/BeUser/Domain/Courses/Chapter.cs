@@ -1,6 +1,6 @@
-﻿using Domain.Course.Enrollments;
+﻿using Domain.Courses.Enrollments;
 
-namespace Domain.Course;
+namespace Domain.Courses;
 
 public class Chapter
 {

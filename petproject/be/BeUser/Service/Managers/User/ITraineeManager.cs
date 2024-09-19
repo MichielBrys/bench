@@ -1,7 +1,7 @@
 ﻿using Domain;
-using Domain.User;
+using Domain.Users;
 
-namespace Service.Managers;
+namespace Service.Managers.User;
 
 public interface ITraineeManager
 {

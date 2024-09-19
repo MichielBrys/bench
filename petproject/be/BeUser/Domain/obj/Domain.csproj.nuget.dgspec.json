@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brysm\\Documents\\bank\\bench\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {}
+    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brysm\\Documents\\bank\\bench\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {
+    "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brysm\\Documents\\bank\\bench\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\brysm\\Documents\\bank\\bench\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\brysm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brysm\\Documents\\bank\\bench\\petproject\\be\\BeUser\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\brysmic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brysmic\\Desktop\\cs\\bank\\b\\petproject\\be\\BeUser\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\brysm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\brysmic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

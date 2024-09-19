@@ -1,4 +1,4 @@
-﻿namespace Domain.Events.Trainee;
+﻿namespace Domain.Events.Trainees;
 
 public class TraineeCreated : Event
 {

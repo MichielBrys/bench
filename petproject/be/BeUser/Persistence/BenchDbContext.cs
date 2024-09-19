@@ -1,9 +1,9 @@
 ﻿using Domain;
-using Domain.Course;
-using Domain.Course.Enrollments;
+using Domain.Courses;
+using Domain.Courses.Enrollments;
 using Domain.Events;
-using Domain.Progress;
-using Domain.User;
+using Domain.Progresses;
+using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence;

@@ -1,4 +1,4 @@
-﻿namespace Domain.Progress;
+﻿namespace Domain.Progresses;
 
 public class ProgressReport
 {

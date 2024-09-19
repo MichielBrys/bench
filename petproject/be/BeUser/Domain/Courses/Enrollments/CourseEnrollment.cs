@@ -1,6 +1,6 @@
-﻿using Domain.Progress;
+﻿using Domain.Progresses;
 
-namespace Domain.Course.Enrollments;
+namespace Domain.Courses.Enrollments;
 
 public class CourseEnrollment
 {

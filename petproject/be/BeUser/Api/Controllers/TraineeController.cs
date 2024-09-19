@@ -1,14 +1,14 @@
 ﻿using Domain;
 using Domain.Events;
-using Domain.Events.Trainee;
-using Domain.User;
+using Domain.Users;
 using Microsoft.AspNetCore.Mvc;
 using Service.Managers;
+using Service.Managers.User;
 
 namespace Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/trainee")]
 public class TraineeController : ControllerBase
 {
     private readonly ITraineeManager _traineeManager;
@@ -18,14 +18,14 @@ public class TraineeController : ControllerBase
         _traineeManager = traineeManager;
     }
 
-    [HttpGet("trainees/{traineeId:Guid}")]
+    [HttpGet("{traineeId:Guid}")]
     public async Task<ActionResult> GetTraineeById(Guid traineeId)
     {
         var trainee = await _traineeManager.GetTrainee(traineeId);
         return trainee != null ? Ok(trainee) : BadRequest();
     }
 
-    [HttpPost("trainees/{traineeName}")]
+    [HttpPost("{traineeName}")]
     public async Task<ActionResult> AddTrainee(string traineeName, string email)
     {
         var trainee = new Trainee(traineeName,email);
